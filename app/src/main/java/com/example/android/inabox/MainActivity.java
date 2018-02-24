@@ -2,12 +2,18 @@ package com.example.android.inabox;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText emailAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +51,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        emailAddress = (EditText) findViewById(R.id.emailAddress);
+
+    }
+
+    public void onJoinButtonPressed(View view) {
+        String emailStr = emailAddress.getText().toString();
+        if (TextUtils.isEmpty(emailStr)) {
+            Toast.makeText(this, "You didn't enter any email address", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Thank you for subscribing", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
+

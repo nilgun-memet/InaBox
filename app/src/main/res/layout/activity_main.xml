@@ -7,108 +7,111 @@
     android:orientation="vertical"
     tools:context="com.example.android.inabox.MainActivity">
 
-        <ImageView
-            android:id="@+id/header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:adjustViewBounds="true"
-            android:src="@drawable/header_new" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/marginSmall"
-            android:layout_marginTop="@dimen/marginSmall"
-            android:src="@drawable/inabox_logo" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_below="@id/header"
-    android:gravity="center_horizontal">
-    
-    <TextView
-        android:id="@+id/description"
+    <ImageView
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/marginLarge"
-        android:layout_marginEnd="@dimen/marginLarge"
-        android:layout_marginTop="@dimen/marginSmall"
-        android:layout_marginBottom="@dimen/marginSmall"
-        android:text="@string/description"
-        android:textSize="@dimen/body"
-        android:gravity="center"/>
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/header_new" />
 
-    <TextView
-        android:id="@+id/newsletter"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginMedium"
-        android:text="@string/newsletter"
-        android:textSize="@dimen/title" />
-    
-    <EditText
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/emailAddress"
-        android:paddingTop="@dimen/marginMedium"
-        android:textSize="@dimen/body"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/marginSmall"
-        android:onClick="joinNow"
-        android:text="@string/joinButton"
-        android:textSize="@dimen/body"
-        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/marginSmall"
         android:layout_marginTop="@dimen/marginSmall"
-        android:layout_marginBottom="@dimen/marginMedium"/>
+        android:src="@drawable/inabox_logo" />
 
     <LinearLayout
-        android:id="@+id/social"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        tools:ignore="ObsoleteLayoutParam"
-        android:layout_marginTop="@dimen/marginSmall">
+        android:layout_below="@id/header"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/facebook"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/marginSmall"
             android:layout_marginEnd="@dimen/marginLarge"
-            android:src="@drawable/facebook_grey" />
+            android:layout_marginStart="@dimen/marginLarge"
+            android:layout_marginTop="@dimen/marginSmall"
+            android:gravity="center"
+            android:text="@string/description"
+            android:textSize="@dimen/body" />
 
-        <ImageView
-            android:id="@+id/instagram"
+        <TextView
+            android:id="@+id/newsletter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/instagram_grey"
-            android:layout_marginEnd="@dimen/marginLarge" />
+            android:layout_marginTop="@dimen/marginMedium"
+            android:text="@string/newsletter"
+            android:textSize="@dimen/title" />
 
-        <ImageView
-            android:id="@+id/pinterest"
+        <EditText
+            android:id="@+id/emailAddress"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/emailAddress"
+            android:inputType="textEmailAddress"
+            android:paddingTop="@dimen/marginMedium"
+            android:textSize="@dimen/body" />
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/pinterest_grey" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/marginMedium"
+            android:layout_marginTop="@dimen/marginSmall"
+            android:onClick="onJoinButtonPressed"
+            android:padding="@dimen/marginSmall"
+            android:text="@string/joinButton"
+            android:textSize="@dimen/body" />
 
+        <LinearLayout
+            android:id="@+id/social"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/marginSmall"
+            android:orientation="horizontal"
+            tools:ignore="ObsoleteLayoutParam">
+
+            <ImageView
+                android:id="@+id/facebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/marginLarge"
+                android:src="@drawable/facebook_grey" />
+
+            <ImageView
+                android:id="@+id/instagram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/marginLarge"
+                android:src="@drawable/instagram_grey" />
+
+            <ImageView
+                android:id="@+id/pinterest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pinterest_grey" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/contact"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/marginSmall"
         android:layout_marginLeft="@dimen/marginLarge"
         android:layout_marginRight="@dimen/marginLarge"
-        android:textSize="@dimen/footer"
         android:gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/marginSmall"/>
+        android:text="@string/contact"
+        android:textSize="@dimen/footer" />
 
 </RelativeLayout>
